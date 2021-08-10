@@ -1,4 +1,5 @@
 import { IonAvatar, IonButton, IonItem, IonLabel } from "@ionic/react";
+import { toggleFollowing } from "../store/PeopleStore";
 
 export const Person = ({ person }) => {
 
@@ -13,7 +14,7 @@ export const Person = ({ person }) => {
 				<p>{ person.title }</p>
 			</IonLabel>
 
-			<IonButton color="primary" fill={ person.following ? "solid" : "outline" }>
+			<IonButton color="primary" fill={ person.following ? "solid" : "outline" } onClick={ () => toggleFollowing(person.id) }>
 				{ person.following ? "Following" : "Follow" }
 			</IonButton>
 		</IonItem>
